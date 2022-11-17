@@ -1,0 +1,124 @@
+.grid-container {
+    display: grid;    
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px 6px;
+    grid-template-areas:
+      "src_1"
+      "src_2"
+      "src_3"
+      "src_4"
+      "src_5"
+      "src_6"
+      "src_7"
+      "src_8"
+      "src_9"
+      "src_10";
+      
+  }
+
+  .fichas {
+    filter: grayscale(100%);
+  }
+  
+  .src_1 { grid-area: src_1; }
+  
+  .src_2 { grid-area: src_2; }
+  
+  .src_3 { grid-area: src_3; }
+  
+  .src_4 { grid-area: src_4; }
+  
+  .src_5 { grid-area: src_5; }
+  
+  .src_6 { grid-area: src_6; }
+  
+  .src_7 { grid-area: src_7; }
+  
+  .src_8 { grid-area: src_8; }
+  
+  .src_9 { grid-area: src_9; }
+  
+  .src_10 { grid-area: src_10; }
+
+  .grid-container2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 10%;
+    gap: 6px 8px;
+    grid-template-areas:
+      "menu_1 menu_2 menu_3 menu_4 menu_5 menu_6 menu_7 menu_8 menu_9 menu_10";
+  }
+  
+  .menu_1 { grid-area: menu_1; }
+  
+  .menu_2 { grid-area: menu_2; }
+  
+  .menu_3 { grid-area: menu_3; }
+  
+  .menu_4 { grid-area: menu_4; }
+  
+  .menu_5 { grid-area: menu_5; }
+  
+  .menu_6 { grid-area: menu_6; }
+  
+  .menu_7 { grid-area: menu_7; }
+  
+  .menu_8 { grid-area: menu_8; }
+  
+  .menu_9 { grid-area: menu_9; }
+  
+  .menu_10 { grid-area: menu_10; }
+  
+  .sidepanel  {
+    width: 0px;
+    position: fixed;
+    z-index: 1;
+    height: 550px;
+    top: 50;
+    left: 5;
+    background-color: transparent;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 8px;
+  }
+  
+  .sidepanel a {
+    padding: 8px 8px 8px 8  px;
+    text-decoration: none;
+    font-size: 1px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+ 
+ 
+  .openbtn {
+    font-size: 1px;
+    cursor: pointer;
+    background-color: transparent;
+    color: transparent;
+    padding: 8px 8px;
+    border-color: transparent;
+  }
+  
+ 
+  
+
+  .card {
+    background-color: rgb(255, 94, 0);
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+}
+
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
