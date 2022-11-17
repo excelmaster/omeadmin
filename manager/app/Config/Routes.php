@@ -39,7 +39,11 @@ $routes->get('/', 'Home::index');
 $routes->get('/courses', 'Course::index');
 $routes->get('/lessons/list/(:num)/(:any)','Lesson::index/$1/$2');
 $routes->get('/activities/list/(:num)/(:num)','Activity::index/$1/$2');
-
+$routes->get('/activities/new/(:num)','Activity::new/$1');
+$routes->post('/activities/store', 'Activity::store');
+$routes->post('/activities/delete/(:num)', 'Activity::delete/$1');
+$routes->get('/activities/edit/(:num)', 'Activity::edit/$1');
+$routes->post('/activities/update/(:num)', 'Activity::update/$1');
 
 /*
  * --------------------------------------------------------------------

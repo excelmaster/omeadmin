@@ -167,14 +167,14 @@
                     <div class="app-sidebar__inner">
                         <ul class="vertical-nav-menu">
                             <li class="app-sidebar__heading">Contenido</li>
-                            <li>
+                            <!-- <li>
                                 <a href="<?php echo site_url('/verbs/show'); ?>" >
                                     <i class="metismenu-icon pe-7s-rocket"></i>
                                     Verbos
                                 </a>
-                            </li>
+                            </li> -->
                             <li>
-                                <a href="<?php echo site_url('/admin/courses'); ?>" >
+                                <a href="<?php echo site_url('courses'); ?>" >
                                     <i class="metismenu-icon pe-7s-world"></i>
                                     Mundos
                                 </a>
