@@ -21,7 +21,7 @@ class ActivityModel extends Model
     protected $skipValidation     = false;
 
     public function readActivitiesxLesson($lessonId){
-        return $this->where('lessonId',$lessonId)->orderBy('activityNumber','asc')->findAll();
+        return $this->where('lessonId',$lessonId)->orderBy('lessonId asc, activityNumber asc')->findAll();
     }
 
     public function getActivityImage(){

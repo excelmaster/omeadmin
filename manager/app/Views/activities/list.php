@@ -56,7 +56,7 @@ $session = session();
             <td><?php echo $item['objectId'] ?></td>
             <td><?php echo $item['tipo'] ?></td>
             <td><?php echo $item['descripcion'] ?></td>
-            <td><?php echo $item['url_resources'] ?></td>
+            <td><?php echo substr($item['url_resources'],0,25); ?>...</td>
             <td><?php echo $item['deleted_at'] ?></td>
             <td><a class="btn btn-info btn-sm txt-black" href="<?php echo base_url('activities/edit/'.$item['id']); ?>" role="button">Editar </a></td>
             <td>
