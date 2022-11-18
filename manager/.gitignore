@@ -126,4 +126,4 @@ nb-configuration.xml
 /.phpunit.*.cache
 
 # Codeigniter
-app/config/App.php
+app/Config/App.php
