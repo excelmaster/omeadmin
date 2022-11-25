@@ -37,8 +37,6 @@ $session = session();
           <th scope="col">Imagen asignada</th>
           <th scope="col">Fecha de Eliminación</th>
           <th span="3">Acciones</th>
-          <th></th>
-          <th></th>
         </tr>
       </thead>
       <tbody>

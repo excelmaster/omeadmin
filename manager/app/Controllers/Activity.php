@@ -67,22 +67,25 @@ class Activity extends BaseController
 	public function edit($id)
 	{
 		$activityInstance = new ActivityModel();
-		$activity = $activityInstance->asObject()->find($id);
+		$activity  = $activityInstance->asObject()->find($id);
+	
 		if ($activity == null) {
+			echo "error de ejecucion";	
 			throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
 		}
 		$images = $activityInstance->getActivityImage();
-		$mundos = array('TEENS', 'KIDS');
-		$tipos = array('IRREGULAR', 'REGULAR', 'PHRASAL');
-		$tools = array('HVP', 'PDF', 'RESOURCE');
-		var_dump(substr($tipos[0], 0, 3));
+		$mundos = array('TEENS', 'KIDS');		
+		$tools = array('HVP', 'PDF', 'RESOURCE');	
+		$answers = array('Si','No');	
 		$data = array(
-			'activity' => $activity,
-			'mundos' => $mundos,
-			'tipos' => $tipos,
+			'record' => $activity,
+			'activityId' => $id,
+			'mundos' => $mundos,			
 			'images' => $images,
-			'tools' => $tools
+			'tools' => $tools,
+			'answers' => $answers
 		);
+		//print_r($data);		
 		return view('activities/edit', $data);
 	}
 
@@ -91,19 +94,28 @@ class Activity extends BaseController
 		$session = session();
 		$activityInstance = new ActivityModel();
 		$activity = $activityInstance->asObject()->find($id);
-		if ($activity == null) {
+		if ($activity == null) {			
 			throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
 		}
 		$activityInstance->update($id, [
-			'lessonId' => $this->request->getPost('lessonId'),
+			'lessonId' => $session->lessonId,
 			'activityNumber' => $this->request->getPost('activityNumber'),
 			'img_path' => $this->request->getPost('image'),
 			'objectId' => $this->request->getPost('objectId'),
 			'tipo' => strtolower($this->request->getPost('tipo')),
 			'descripcion' => $this->request->getPost('url_resources'),
-			'url_resources' => $this->request->getPost('url_resources')
+			'url_resources' => $this->request->getPost('url_resources'),
+			'quiz' => $this->request->getPost('quiz'),
 		]);
 
+		return redirect()->to('/activities/list/' . $session->get('lessonId') . '/' . $session->get('lesson'));
+	}
+
+	public function activate($id)
+	{
+		$session = Session();
+		$activityInstance = new ActivityModel();
+		$activityInstance->activate($id);
 		return redirect()->to('/activities/list/' . $session->get('lessonId') . '/' . $session->get('lesson'));
 	}
 }

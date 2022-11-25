@@ -41,8 +41,9 @@ $session = session();
           <th scope="col">Descripción</th>
           <th scope="col">Url Resource</th>
           <th scope="col">Eliminado en</th>
-          <th span="3">Acciones</th>
-          <th></th>        
+          <th scope="col">¿Es quiz?</th>
+          <th >Acciones</th>
+          <th></th>                 
         </tr>
       </thead>
       <tbody>
@@ -58,13 +59,28 @@ $session = session();
             <td><?php echo $item['descripcion'] ?></td>
             <td><?php echo substr($item['url_resources'],0,25); ?>...</td>
             <td><?php echo $item['deleted_at'] ?></td>
-            <td><a class="btn btn-info btn-sm txt-black" href="<?php echo base_url('activities/edit/'.$item['id']); ?>" role="button">Editar </a></td>
-            <td>
-              <form action="<?php echo base_url('activities/delete/'.$item['id']) ?>" method="post">
-                <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
-              </form>              
-            </td>
-          </tr>
+            <td><?php echo $item['quiz']== 'Si' ? 'Si' : '-' ?></td>
+            <?php 
+            if ($item['deleted_at'] == null){
+              echo '  <td><a class="btn btn-info btn-sm txt-black" href="'.base_url('activities/edit/'.$item['id']).'" role="button">Editar </a></td>';
+              echo '  <td>';
+              echo '    <form action="'.base_url('activities/delete/'.$item['id']).'" method="post">';
+              echo '      <button type="submit" class="btn btn-danger btn-sm">Desactivar</button>';
+              echo '    </form>';
+              echo '  </td>';
+              echo '</tr>';
+            } else {             
+              echo '  <td>';
+              echo '    <form action="'.base_url('activities/activate/'.$item['id']).'" method="post">';
+              echo '      <button type="submit" class="btn btn-warning btn-sm">Activar</button>';
+              echo '    </form>';
+              echo '  </td>';
+              echo '  <td></td>';
+              echo '</tr>';
+            }
+
+            ?>
+            
         <?php } ?>
       </tbody>
     </table>

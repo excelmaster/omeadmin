@@ -117,6 +117,11 @@
                                         Cargo
                                     </div>
                                 </div>
+                                <div class="widget-content-left  ml-3 header-user-info">
+                                    <div class="widget-heading">
+                                        <a href="<?php echo base_url('/auth/logout'); ?>">Cerrar sesión </a>
+                                    </div>                                    
+                                </div>
                                 <!--  <div class="widget-content-right header-user-info ml-3">
                                     <button type="button"
                                         class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
@@ -239,8 +244,7 @@
     <script type="text/javascript" src="https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"></script>
     <script>
         $(document).ready(function () {
-            $('#omedata').DataTable(
-            );
+            $('#omedata').DataTable();
         });
     </script>
 
