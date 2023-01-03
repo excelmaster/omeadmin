@@ -36,6 +36,7 @@ $session = session();
           <th scope="col">Lección No.</th>
           <th scope="col">Actividad No.</th>
           <th scope="col">Imagen asignada</th>
+          <th scope="col">picture</th>
           <th scope="col">Id objeto</th>
           <th scope="col">Tipo</th>
           <th scope="col">Descripción</th>
@@ -54,6 +55,7 @@ $session = session();
             <td><?php echo $session->get('lesson') ?></td>
             <td><?php echo $item['activityNumber'] ?></td>
             <td><?php echo $item['img_path'] ?></td>
+            <td><img src="<?php echo 'https://cursos.mundoeducativodigital.com/public/img/'.substr($_SESSION["mundoName"],0,-2).'/activities/cards/'.$item['img_path']; ?>"></td>
             <td><?php echo $item['objectId'] ?></td>
             <td><?php echo $item['tipo'] ?></td>
             <td><?php echo $item['descripcion'] ?></td>
