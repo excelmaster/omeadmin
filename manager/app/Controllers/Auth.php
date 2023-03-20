@@ -140,7 +140,8 @@ class Auth extends \CodeIgniter\Controller
 				//if the login is successful
 				//redirect them back to the home page
 				$this->session->setFlashdata('message', $this->ionAuth->messages());
-				return redirect()->to('courses')->withCookies();
+				echo 'authenticated';
+				//return view('course');
 			}
 			else
 			{
