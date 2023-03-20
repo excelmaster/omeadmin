@@ -51,12 +51,7 @@ $this->section('content');
             <td><?php echo strtoupper($item['participle']) ?></td>
             <td><?php echo strtoupper($item['significado']) ?></td>
             <td><?php echo strtoupper($item['position']) ?></td>
-            <td><a class="btn btn-success btn-sm " href="<?php echo base_url('/verbs/edit/'.$item['id']); ?>" role="button">Editar </a></td>
-            <td>
-              <form action="<?php echo base_url('verbs/delete/'.$item['id']) ?>" method="post">
-                <button type="submit" class="btn btn-danger">Eliminar</button>
-              </form>              
-            </td>
+            <td><a class="btn btn-success btn-sm " href="<?php echo base_url('/verbs/edit/'.$item['id']); ?>" role="button">Editar </a></td>            
             <td>              
                 <button type="button" class="btn btn-danger" onclick="confirmDeletion(<?php echo $item['id'] ?>,'<?php echo str_replace(',','-',$item['present']) ?>')">Eliminar</button>                          
             </td>
