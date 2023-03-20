@@ -57,12 +57,28 @@ $this->section('content');
                 <button type="submit" class="btn btn-danger">Eliminar</button>
               </form>              
             </td>
+            <td>              
+                <button type="button" class="btn btn-danger" onclick="confirmDeletion(<?php echo $item['id'] ?>,'<?php echo str_replace(',','-',$item['present']) ?>')">Eliminar</button>                          
+            </td>
           </tr>
         <?php } ?>
       </tbody>
     </table>
   </div>
 </div>
+
+<script type="text/javascript">
+  url = '<?php echo base_url(); ?>';
+  function confirmDeletion(id, verb){
+    var r = confirm('Realmente desea eliminar el registro' + verb);
+    if (r == true) {
+      window.location= url + '/verbs/delete/' + id;
+    } else {
+      return false;
+    }
+  }
+</script>
+
 <?php
 $this->endSection();
 ?>
