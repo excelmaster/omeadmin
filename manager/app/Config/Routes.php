@@ -59,11 +59,11 @@ $routes->get('/verbs/index/(:any)', 'Verbs::index/$1');
 $routes->get('/verbs/front/(:any)', 'Verbs::front/$1');
 $routes->get('/verbs/list/(:any)/(:any)', 'Verbs::list/$1/$2');
 $routes->get('/verbs/show', 'Verbs::show');
-$routes->get('/verbs/edit/(:int)', 'Verbs::edit/$1');
+$routes->get('/verbs/edit/(:num)', 'Verbs::edit/$1');
 $routes->get('/verbs/new', 'Verbs::new');
 $routes->post('/verbs/create', 'Verbs::create');
-$routes->get('/verbs/update/(:int)', 'Verbs::update/$1');
-$routes->get('/verbs/delete/(:int)', 'Verbs::delete/$1');
+$routes->post('/verbs/update/(:num)', 'Verbs::update/$1');
+$routes->get('/verbs/delete/(:num)', 'Verbs::delete/$1');
 
 // IonAuth routes
 $routes->group('auth', ['namespace' => 'IonAuth\Controllers'], function ($routes) {
