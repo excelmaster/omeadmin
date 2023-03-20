@@ -184,6 +184,12 @@
                                     Mundos
                                 </a>
                             </li>
+                            <li>
+                                <a href="<?php echo site_url('verbs/show'); ?>" >
+                                    <i class="metismenu-icon pe-7s-chat"></i>
+                                    Verbos
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>

@@ -35,9 +35,16 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+// login routes
 $routes->get('/', 'Auth::login');
+
+// course routes
 $routes->get('/courses', 'Course::index');
+
+// lesson routes
 $routes->get('/lessons/list/(:num)/(:any)','Lesson::index/$1/$2');
+
+// activity routes
 $routes->get('/activities/list/(:num)/(:num)','Activity::index/$1/$2');
 $routes->get('/activities/new/(:num)','Activity::new/$1');
 $routes->post('/activities/store', 'Activity::store');
@@ -45,6 +52,18 @@ $routes->post('/activities/delete/(:num)', 'Activity::delete/$1');
 $routes->get('/activities/edit/(:num)', 'Activity::edit/$1');
 $routes->post('/activities/update/(:num)', 'Activity::update/$1');
 $routes->post('/activities/activate/(:num)', 'Activity::activate/$1');
+
+// verb routes
+//verbs
+$routes->get('/verbs/index/(:any)', 'Verbs::index/$1');
+$routes->get('/verbs/front/(:any)', 'Verbs::front/$1');
+$routes->get('/verbs/list/(:any)/(:any)', 'Verbs::list/$1/$2');
+$routes->get('/verbs/show', 'Verbs::show');
+$routes->get('/verbs/edit/(:int)', 'Verbs::edit/$1');
+$routes->get('/verbs/new', 'Verbs::new');
+$routes->post('/verbs/create', 'Verbs::create');
+$routes->get('/verbs/update/(:int)', 'Verbs::update/$1');
+$routes->get('/verbs/delete/(:int)', 'Verbs::delete/$1');
 
 // IonAuth routes
 $routes->group('auth', ['namespace' => 'IonAuth\Controllers'], function ($routes) {
