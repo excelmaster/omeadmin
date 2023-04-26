@@ -63,7 +63,7 @@ $session = session();
         <select class="form-select" id="tipo" name="tipo" required>
           <option selected disabled value="">Escoja...</option>
           <option value="hvp">HVP</option>     
-          <option value="pdf">RESOURCE</option>
+          <option value="resource">RESOURCE</option>
         </select>
         <div class="valid-feedback">
           Please select a valid state.
