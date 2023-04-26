@@ -35,11 +35,17 @@ $session = session();
         <label for="img" class="form-label">Imagen asociada</label>
         <select class="form-select" id="image" name="image" required>
           <option selected disabled value="">Escoja...</option>
-          <?php 
-          foreach($images as $img){
-            echo "<option value='".$img['img_path']."'>".$img['img_path']."</option>;";
-          }
-          ?>          
+          <option value="ofi_temario.png">ofi_temario.png</option>
+          <option value="ofi_videos.png">ofi_videos.png</option>
+          <option value="ofi_actvEvaluativa.png">ofi_actvEvaluativa.png</option>
+          <option value="ofi_videoInteractivo.png">ofi_videoInteractivo.png</option>
+          <option value="ofi_quiz.png">ofi_quiz.png</option> 
+          <option value="ofi_pdf.png">ofi_pdf.png</option> 
+          <!-- <?php
+          /* foreach ($images as $img) {
+            echo "<option value='" . $img['img_path'] . "'>" . $img['img_path'] . "</option>;";
+          } */
+          ?> -->
         </select>
         <div class="valid-feedback">
           Please select a valid state.
@@ -56,8 +62,8 @@ $session = session();
         <label for="tipo" class="form-label">Tipo</label>
         <select class="form-select" id="tipo" name="tipo" required>
           <option selected disabled value="">Escoja...</option>
-          <option value="hvp">HVP</option>
-          <option value="pdf">PDF</option>
+          <option value="hvp">HVP</option>     
+          <option value="pdf">RESOURCE</option>
         </select>
         <div class="valid-feedback">
           Please select a valid state.
@@ -72,7 +78,7 @@ $session = session();
       </div>
       <div class="col-md-12">
         <label for="url_resources" class="form-label">URL del recurso (Solo si es PDF)</label>
-        <input type="text" class="form-control" id="url_resources" name="url_resources" placeholder="-" >
+        <input type="text" class="form-control" id="url_resources" name="url_resources" placeholder="-">
         <div class="invalid-feedback">
           Please provide a valid city.
         </div>
