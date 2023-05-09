@@ -21,7 +21,7 @@ class CourseModel extends Model
     protected $skipValidation     = false;
 
     public function readCourses(){
-        return $this->orderBy('category', 'asc')->findAll();        
+        return $this->orderBy('category', 'asc')->withDeleted()->findAll();        
     }
 
 }
