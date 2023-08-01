@@ -106,6 +106,13 @@ $session = session();
           Please provide a valid city.
         </div>
       </div>
+      <div class="col-md-12">
+        <label for="podcastName" class="form-label">Nombre del podcast</label>
+        <input type="text" class="form-control" id="desc" name="podcastName" value="<?php echo $record->podcastName; ?>">
+        <div class="invalid-feedback">
+          Please provide a podcast Name.
+        </div>
+      </div>
       <div class="col-12">
         <button class="btn btn-primary" type="submit">Guardar</button>
       </div>

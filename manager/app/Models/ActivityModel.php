@@ -12,7 +12,7 @@ class ActivityModel extends Model
     protected $returnType     = 'array';
     protected $useSoftDeletes = true;
 
-    protected $allowedFields = ['lessonId', 'activityNumber','img_path','objectId','tipo','url_resources','deleted_at','quiz'];
+    protected $allowedFields = ['lessonId', 'activityNumber','img_path','objectId','tipo','descripcion','url_resources','deleted_at','quiz','podcastName'];
     
     protected $useTimestamps = false;
 

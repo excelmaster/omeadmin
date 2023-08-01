@@ -45,7 +45,8 @@ class Activity extends BaseController
 			'objectId' => $this->request->getPost('objectId'),
 			'tipo' => $this->request->getPost('tipo'),
 			'descripcion' => $this->request->getPost('desc'),
-			'url_resources' => $this->request->getPost('url_resources')
+			'url_resources' => $this->request->getPost('url_resources'),
+			'podcastName' => $this->request->getPost('podcastName')
 		]);
 		return redirect()->to('/activities/list/' . $session->get('lessonId') . '/' . $session->get('lesson'));
 	}
@@ -103,9 +104,10 @@ class Activity extends BaseController
 			'img_path' => $this->request->getPost('image'),
 			'objectId' => $this->request->getPost('objectId'),
 			'tipo' => strtolower($this->request->getPost('tipo')),
-			'descripcion' => $this->request->getPost('url_resources'),
+			'descripcion' => $this->request->getPost('desc'),
 			'url_resources' => $this->request->getPost('url_resources'),
 			'quiz' => $this->request->getPost('quiz'),
+			'podcastName' => $this->request->getPost('podcastName')
 		]);
 
 		return redirect()->to('/activities/list/' . $session->get('lessonId') . '/' . $session->get('lesson'));
